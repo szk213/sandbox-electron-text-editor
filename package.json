@@ -1,0 +1,36 @@
+{
+  "name": "sandbox-electron-text-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.js",
+  "scripts": {
+    "electron": "electron",
+    "electron-packager": "electron-packager",
+    "dev": "electron .",
+    "clean": "trash ./dist",
+    "clean:osx": "trash ./dist/osx",
+    "clean:win": "trash ./dist/win",
+    "build": "npm run clean && npm run build:osx && npm run build:win",
+    "build:osx": "npm run clean:osx && electron-packager . \"hello-world\" --out=dist/osx --platform=darwin --arch=x64",
+    "build:win": "npm run clean:win && electron-packager . \"hello-world\" --out=dist/win --platform=win32 --arch=x64",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szk213/sandbox-electron-text-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szk213/sandbox-electron-text-editor/issues"
+  },
+  "homepage": "https://github.com/szk213/sandbox-electron-text-editor#readme",
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-packager": "^9.1.0",
+    "trash-cli": "^1.4.0"
+  },
+  "dependencies": {
+    "ace-builds": "^1.2.9"
+  }
+}
